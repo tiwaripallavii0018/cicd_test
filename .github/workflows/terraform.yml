@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: hashicorp/setup-terraform@v4
-      - run: terraform init -backend-config="key=staging.tfstate"
+      - run: terraform init -backend-config="key=staging.tfstate" # create a staging staticfile
       - run: terraform apply -auto-approve -var-file=envs/staging.tfvars
       - run: terraform apply -auto-approve -var-file=envs/staging.tfvars
 
